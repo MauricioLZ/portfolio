@@ -1,13 +1,17 @@
 import './style/App.css';
-import Avatar from '@mui/material/Avatar';
-import photo from "./img/photoMauricio.jpg";
+import MainHeader from './components/mainHeader';
+import Portfolio from './components/portfolio';
+import About from './components/about';
+import Reviews from './components/reviews';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Avatar alt="Mauricio Lopes Zugno" src={photo} sx={{ width: 400, height: 400}}/>
-      </header>
+      <MainHeader></MainHeader>
+      <Portfolio></Portfolio>
+      <About></About>
+      {/* <section id="Timeline"> </section> */}
+      <Reviews></Reviews>
     </div>
   );
 }
