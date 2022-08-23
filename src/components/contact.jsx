@@ -1,4 +1,4 @@
-function Portfolio()
+function Contact()
 {
     return (
         <div>
@@ -7,4 +7,4 @@ function Portfolio()
     );
 }
 
-export default Portfolio;
+export default Contact;

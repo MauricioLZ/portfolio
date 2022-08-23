@@ -1,5 +1,15 @@
+html, body {
+  height: 100%;
+  margin: 0px;
+}
+
+#root {
+  background-color: #222222;
+  height: 100%;
+}
+
 .App {
-  text-align: center;
+  height: 100%;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -23,23 +33,87 @@
   margin-top: 40px;
 }
 
-.sectionsLinks {
+/* SIDEBAR */
+
+.sidebar {
   position: absolute;
-  width: 100%;
-  bottom: 40px;
+  text-align: center;
+  width: 250px;
+  top: 15px;
+  left: 15px;
+  bottom: 15px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 4px solid white;
 }
 
-.sectionsLinks a {
+.profileImg {
+  width: 180px;
+  margin-top: 30px;
+}
+
+.level {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #0c8ea8;
+}
+
+.level span {
+  color: white;
+}
+
+.expGauge {
+  height: 18px;
+  width: 180px;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: #737476;
+  border: 3px solid white;
+}
+
+.expGauge div {
+  height: 100%;
+  background-color: #fda8ab;
+}
+
+.topicsGrid {
+  display: grid;
+  grid-template-areas: 
+    "cursor topic topic topic";
+}
+
+.cursorContainer {
   display: inline-block;
-  width: 15%;
-  color: #313131;
-  text-decoration: none;
-  font-weight: 500;
+  grid-area: cursor;
+  width: 80px;
+  height: 180px;
 }
 
-.sectionsLinks a:hover {
-  color: #4b3850;
+.cursorContainer img {
+  display: block;
+  margin-left: 20px;
+  margin-top: 14px;
 }
+
+.topics {
+  display: inline-block;
+  grid-area: topic;
+  height: 180px;
+}
+
+.topics a {
+  display: block;
+  text-align: left;
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: white;
+}
+
+.topics a:hover {
+  color: #0c8ea8;
+}
+
+/* PORTFOLIO */
 
 .portfolioImgGrid {
   display: grid;
@@ -53,19 +127,4 @@
   width: 100%;
   padding-right: 15px;
   padding-bottom: 15px;
-}
-
-.aboutImg1 {
-  width: 200px;
-  margin-right: 15px;
-}
-
-.aboutImg2 {
-  width: 200px;
-  margin-right: 15px;
-}
-
-.reviewsCarousel {
-  display: inline-block;
-  text-align: center;
 }

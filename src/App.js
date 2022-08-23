@@ -1,17 +1,35 @@
+import { useState } from 'react';
 import './style/App.css';
-import MainHeader from './components/mainHeader';
+import Sidebar from './components/sidebar';
 import Portfolio from './components/portfolio';
 import About from './components/about';
 import Reviews from './components/reviews';
+import Dialogue from './components/dialogue';
+import Contact from './components/contact';
 
 function App() {
+  const [page, setPage] = useState(0);
+
+  function changePage(index) {
+    setPage(index);
+  }
+
   return (
     <div className="App">
-      <MainHeader></MainHeader>
-      <Portfolio></Portfolio>
-      <About></About>
-      {/* <section id="Timeline"> </section> */}
-      <Reviews></Reviews>
+      <Sidebar></Sidebar>
+      <Dialogue></Dialogue>
+      { page === 0 && 
+        <Portfolio></Portfolio> 
+      }
+      {page === 1 &&
+        <About></About>
+      }
+      {page === 2 &&
+        <Reviews></Reviews>
+      }
+      {page === 3 &&
+        <Contact></Contact>
+      }
     </div>
   );
 }
