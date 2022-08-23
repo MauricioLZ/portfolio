@@ -44,7 +44,7 @@ html, body {
   bottom: 15px;
   border-radius: 10px;
   background-color: #08039e;
-  border: 4px solid white;
+  border: 3px solid white;
 }
 
 .profileImg {
@@ -113,7 +113,46 @@ html, body {
   color: #0c8ea8;
 }
 
+/* DIALOGUE */
+
+.dialogue {
+  position: absolute;
+  text-align: left;
+  width: 500px;
+  top: 30px;
+  left: 300px;
+  height: 130px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 15px;
+}
+
+.dialogue h1 {
+  font-size: 1.2rem;
+}
+
+.dialogue p {
+  font-size: 1.2rem;
+}
+
 /* PORTFOLIO */
+
+.portfolio {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding-top: 15px;
+  padding-left: 15px;
+}
 
 .portfolioImgGrid {
   display: grid;

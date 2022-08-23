@@ -1,7 +1,7 @@
 function Portfolio()
 {
     return (
-        <div>
+        <div className="portfolio">
 
         </div>
     );

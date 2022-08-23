@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar></Sidebar>
+      <Sidebar onTopicClick={(index) => changePage(index)}></Sidebar>
       <Dialogue></Dialogue>
       { page === 0 && 
         <Portfolio></Portfolio> 

@@ -2,9 +2,9 @@ import { useState } from "react";
 import photo from "../img/photoMauricio.jpg";
 import cursor from "../img/cursorFF7.png";
 
-function Sidebar()
+function Sidebar(props)
 {
-    const [page, changePage] = useState(0);
+    const [page, setPage] = useState(0);
 
     const today = new Date();
     const age = today.getFullYear() - 1992;
@@ -20,6 +20,13 @@ function Sidebar()
         cursorElement.style.marginTop = (14 + (page * 40)) + "px";
     }
 
+    function onTopicClick(index) {
+        props.onTopicClick(index);
+        setPage(index);
+    }
+
+    const topics = ["Materials", "Status", "Reviews", "Contact"]
+
     return (
         <div className="sidebar">
             <img className="profileImg" src={photo} alt="Mauricio photo"/>
@@ -32,10 +39,13 @@ function Sidebar()
                     <img id="Cursor" src={cursor} alt="Cursor" />
                 </div>
                 <div className="topics">
-                    <a href="#" onMouseEnter={() => changeCursorPositionToIndex(0)} onMouseLeave={resetCursorPosition}>Materials</a>
-                    <a href="#" onMouseEnter={() => changeCursorPositionToIndex(1)} onMouseLeave={resetCursorPosition}>Status</a>
-                    <a href="#" onMouseEnter={() => changeCursorPositionToIndex(2)} onMouseLeave={resetCursorPosition}>Reviews</a>
-                    <a href="#" onMouseEnter={() => changeCursorPositionToIndex(3)} onMouseLeave={resetCursorPosition}>Contact</a>
+                    {topics.map((topic, index) => {
+                        return <a href="#"
+                            key={index}
+                            onMouseDown={() => onTopicClick(index)}
+                            onMouseEnter={() => changeCursorPositionToIndex(index)}
+                            onMouseLeave={resetCursorPosition}>{topic}</a>
+                    })}
                 </div>
             </div>
         </div>
