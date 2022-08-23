@@ -9,10 +9,10 @@ function MainHeader()
             <h1>Mauricio Lopes Zugno</h1>
             <h3>Developer</h3>
             <div className="sectionsLinks">
-                <a href="#Portfolio">Portfolio</a>
-                <a href="#About">About</a>
-                {/* <a href="#Timeline">Timeline</a> */}
-                <a href="#Reviews">Reviews</a>
+                <a href="#Portfolio">PORTFOLIO</a>
+                <a href="#About">ABOUT</a>
+                <a href="#Timeline">TIMELINE</a>
+                <a href="#Reviews">REVIEWS</a>
             </div>
         </header>
     );

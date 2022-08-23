@@ -4,7 +4,7 @@ function Portfolio()
 {
     return (
         <section id="Portfolio">
-            <ul className="portfolioImgGrid">
+            <div className="portfolioImgGrid">
             {itemData.map((item, index) => (
                 <img
                 key={index}
@@ -14,7 +14,7 @@ function Portfolio()
                 loading="lazy"
                 />
             ))}
-            </ul>
+            </div>
         </section>
     );
 }
