@@ -11,7 +11,7 @@ function Dialogue()
     let skips = 0;
     let charTime = 40;
     const dialogueEndSkips = 60;
-
+    
     useEffect(() =>
     {
         const flickIntervalId = setInterval(function ()
@@ -19,7 +19,7 @@ function Dialogue()
             if (offset <= dialogueLines[index].length)
             {
                 part = dialogueLines[index].substr(0, offset);
-                if (skips == 0)
+                if (skips === 0)
                 {
                     offset++;
                 }
@@ -27,11 +27,18 @@ function Dialogue()
             }
             else {
                 skips++;
-                if (skips == dialogueEndSkips)
+                if (skips === dialogueEndSkips)
                 {
-                    index = (index < dialogueLines.length - 1) ? index + 1 : 0;
+                    index++;
                     skips = 0;
                     offset = 0;
+
+                    const linesEnded = (index === dialogueLines.length);
+                    if (linesEnded)
+                    {
+                        //document.querySelector(".dialogue").style.visibility = "hidden";
+                        clearInterval(flickIntervalId);
+                    }
                 }
             }
         }, charTime);
