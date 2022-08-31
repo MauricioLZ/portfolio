@@ -29,7 +29,7 @@ function Sidebar(props)
 
     return (
         <div className="sidebar">
-            <img className="profileImg" src={photo} alt="Mauricio photo"/>
+            <img className="profileImg" src={photo} alt="Profile"/>
             <h5 className="level">LV <span>{age}</span></h5>
             <div className="expGauge">
                 <div style={{width: daysProgression + "%"}}></div>
