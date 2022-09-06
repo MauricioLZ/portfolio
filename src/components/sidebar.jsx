@@ -25,7 +25,7 @@ function Sidebar(props)
         setPage(index);
     }
 
-    const topics = ["Materials", "Status", "Reviews", "Contact"]
+    const topics = ["Materials", "Status", "References", "Contact"]
 
     return (
         <div className="sidebar">

@@ -328,6 +328,7 @@ html, body {
   position: inherit;
   display: inline;
   margin-right: 30px;
+  font-size: 1.2rem;
 }
 
 .lelouchImg {
@@ -353,6 +354,74 @@ html, body {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+/* REVIEWS */
+
+.reviews {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 40px;
+  min-height: 600px;
+  overflow-y: scroll;
+}
+
+.reviews h2 {
+  display: block;
+  margin: 0 60px 60px;
+  text-align: center;
+}
+
+.reviewsList {
+  margin: 0px 80px;
+}
+
+.reviewEntry {
+  margin-bottom: 50px;
+}
+
+.reviewEntry img {
+  border-radius: 50%;
+  border: #cfcfcf solid 2px;
+}
+
+.reviewEntry h4 {
+  display: inline;
+  margin-left: 10px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.reviewEntry p {
+  margin-top: 10px;
+  margin-left: 40px;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/* CONTACT */ 
+
+.contact {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 40px;
+  min-height: 600px;
 }
 
 /* width */
