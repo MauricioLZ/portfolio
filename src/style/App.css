@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   margin: 0px;
+  background-color: #222222;
 }
 
 #root {
@@ -291,6 +292,51 @@ html, body {
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
+
+/* ABOUT */
+
+.about {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 40px;
+  min-height: 600px;
+  overflow-y: scroll;
+}
+
+.about h2 {
+  display: block;
+  margin: 0 60px 40px;
+  text-align: center;
+}
+
+.infjImg {
+  display: inline;
+  height: 85%;
+  margin-right: 40px;
+  overflow-y: initial;
+}
+
+.about p {
+  position: inherit;
+  display: inline;
+  margin-right: 30px;
+}
+
+.lelouchImg {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+/* FULL SCREEN */
 
 .fullScreen {
   position: absolute;
