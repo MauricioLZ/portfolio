@@ -2,7 +2,7 @@ import projects from "../data/projects";
 import { useState } from "react";
 import Project from "./project";
 
-function Portfolio()
+function Portfolio(props)
 {
     const [hovered, setHovered] = useState(-1);
     const [projectIndex, setProjectIndex] = useState(-1);
@@ -57,7 +57,11 @@ function Portfolio()
 
         :
 
-        <Project hideProject={hideProject} index={projectIndex}></Project>
+        <Project  
+            hideProject={hideProject} 
+            index={projectIndex}
+            showOnFullScreen={props.showOnFullScreen}>
+        </Project>
     );
 }
 

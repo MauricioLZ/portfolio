@@ -4,7 +4,7 @@ const projects = [
         platforms: ["Game", "PC", "Mobile"],
         engine: "Unity C#",
         coverImg: "https://i.imgur.com/QwLpWDy.jpg",
-        media: ["https://i.imgur.com/QwLpWDy.jpg", "https://i.imgur.com/QwLpWDy.jpg", "https://i.imgur.com/QwLpWDy.jpg", "https://i.imgur.com/QwLpWDy.jpg"],
+        media: ["https://i.imgur.com/QwLpWDy.jpg", "https://i.imgur.com/CH1LkH2.jpg", "https://i.imgur.com/F3csBF6.jpg", "https://i.imgur.com/GUXJOl7.jpg"],
         description: "Rush Hour was a game I developed in about 4 months when I had an internship with Industry Corporation in Canada. This was a project in almost total autonomy, since the company was starting to abandon game development at the time.\n\nThe UI is not the nicest, but at least I can say I modeled it in Blender.Most of the assets for the game were from a package purchased from Unity’s asset store."
     },
     {
