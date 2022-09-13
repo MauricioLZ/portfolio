@@ -5,10 +5,25 @@ import cursor from "../img/cursorFF7.png";
 function Sidebar(props)
 {
     const [page, setPage] = useState(0);
+    
+    let age, day1, yearProgression, totalDaysInYear;
+    setLevelAndXp();
 
-    const today = new Date();
-    const age = today.getFullYear() - 1992;
-    const daysProgression = (today.getMonth() * 100) / 12;
+    function setLevelAndXp() {
+        const today = new Date();
+
+        const countLastLeapYear = (today.getMonth() === 0 && today.getUTCDate() < 30 && (today.getFullYear() - 1) % 4 == 0);
+        const countThisLeapYear = (today.getMonth() > 0 && (today.getFullYear()) % 4 == 0);
+        totalDaysInYear = (countLastLeapYear || countThisLeapYear) ? 366 : 365;
+
+        const start = new Date(today.getFullYear(), 0, 0);
+        const daysDiffInMiliseconds = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60000);
+        const oneDayInMiliseconds = 86400000;
+        day1 = Math.floor(daysDiffInMiliseconds / oneDayInMiliseconds) - 30; // January 30
+        day1 = (day1 >= 0) ? day1 : (day1 + totalDaysInYear);
+        age = today.getFullYear() - 1992;
+        yearProgression = day1 / totalDaysInYear;
+    }
 
     function changeCursorPositionToIndex(index) {
         const cursorElement = document.getElementById("Cursor");
@@ -32,7 +47,8 @@ function Sidebar(props)
             <img className="profileImg" src={photo} alt="Profile"/>
             <h5 className="level">LV <span>{age}</span></h5>
             <div className="expGauge">
-                <div style={{width: daysProgression + "%"}}></div>
+                <div style={{ width: (yearProgression * 100) + "%"}}></div>
+                <p>{day1} / {totalDaysInYear} to birthday</p>
             </div>
             <div className="topicsGrid">
                 <div className="cursorContainer">

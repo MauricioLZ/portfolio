@@ -2,6 +2,7 @@ import projects from "../data/projects-data";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft'
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons/faVolumeUp'
+import { motion } from "framer-motion"
 
 function Project(props)
 {
@@ -20,7 +21,9 @@ function Project(props)
     const project = projects[props.index];
 
     return (
-        <div className="project">
+        <motion.section className="project"
+            initial={{ x: 80 }}
+            animate={{ x: 0 }}>
             <FontAwesomeIcon className="backBtn" icon={faArrowLeft} size="2x" onMouseDown={goBack} />
             <h2>{project.title}</h2>
             <div className="projectMedia">
@@ -35,7 +38,7 @@ function Project(props)
                 <FontAwesomeIcon icon={faVolumeUp} size="2x" />
                 <p>Audio Description</p>
             </div>
-        </div>
+        </motion.section>
     );
 }
 

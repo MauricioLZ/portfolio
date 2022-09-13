@@ -42,7 +42,7 @@ function Contact()
     }
 
     return (
-        <div className="contact">
+        <section className="contact">
             <h2>Contact</h2>
             <p className="contactDetails">
                 Mauricio Lopes Zugno
@@ -60,7 +60,7 @@ function Contact()
                     <button type="submit">Submit</button>
                 </div>
             </form>
-        </div>
+        </section>
     );
 }
 
