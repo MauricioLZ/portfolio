@@ -4,4 +4,6 @@ import materia2 from "./materia2.png"
 import materia3 from "./materia3.png"
 import materia4 from "./materia4.png"
 
-export default [materia0, materia1, materia2, materia3, materia4];
+const materias = [materia0, materia1, materia2, materia3, materia4];
+
+export default materias;

@@ -15,7 +15,7 @@ function Project(props)
     }
 
     function showOnFullScreen(imgSrc) {
-        props.showOnFullScreen(<img src={imgSrc}></img>);
+        props.showOnFullScreen(<img src={imgSrc} alt="Fullscreen project screenshot"></img>);
     }
 
     const project = projects[props.index];
@@ -28,7 +28,7 @@ function Project(props)
             <h2>{project.title}</h2>
             <div className="projectMedia">
                 {project.media.map((media, index) => (
-                    <img onMouseDown={() => showOnFullScreen(media)} key={index} src={media}/>
+                    <img onMouseDown={() => showOnFullScreen(media)} key={index} src={media} alt="Project screenshot"/>
                 ))}
             </div>
             <div className="projectDescription">

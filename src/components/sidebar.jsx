@@ -13,8 +13,8 @@ function Sidebar(props)
         const today = new Date();
 
         const isAfterBirthday = ((today.getMonth() === 0 && today.getUTCDate() >= 30) || today.getMonth() > 0);
-        const countLastLeapYear = (today.getMonth() === 0 && today.getUTCDate() < 30 && (today.getFullYear() - 1) % 4 == 0);
-        const countThisLeapYear = (isAfterBirthday && (today.getFullYear()) % 4 == 0);
+        const countLastLeapYear = (today.getMonth() === 0 && today.getUTCDate() < 30 && (today.getFullYear() - 1) % 4 === 0);
+        const countThisLeapYear = (isAfterBirthday && (today.getFullYear()) % 4 === 0);
         totalDaysInYear = (countLastLeapYear || countThisLeapYear) ? 366 : 365;
 
         const start = new Date(today.getFullYear(), 0, 0);

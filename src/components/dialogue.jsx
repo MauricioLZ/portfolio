@@ -5,15 +5,15 @@ function Dialogue()
 {
     const [dialogue, setDialogue] = useState(dialogueLines[0]);
     
-    let index = 0;
-    let part = "";
-    let offset = 0;
-    let skips = 0;
-    let charTime = 40;
-    const dialogueEndSkips = 60;
-    
     useEffect(() =>
     {
+        let index = 0;
+        let part = "";
+        let offset = 0;
+        let skips = 0;
+        let charTime = 40;
+        const dialogueEndSkips = 60;
+
         const flickIntervalId = setInterval(function ()
         {
             if (offset <= dialogueLines[index].length)

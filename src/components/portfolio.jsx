@@ -6,7 +6,6 @@ import { AnimatePresence, motion } from "framer-motion"
 
 function Portfolio(props)
 {
-    const [hovered, setHovered] = useState(-1);
     const [projectIndex, setProjectIndex] = useState(-1);
     const [overlayHeight, setOverlayHeight] = useState("");
 
@@ -20,11 +19,6 @@ function Portfolio(props)
     {
         const projectImg = $(".portfolioImgGroup img")[0];
         setOverlayHeight({ height: projectImg.offsetHeight });
-    }
-
-    function showHovered(index) {
-        
-        setHovered(index);
     }
 
     function showProject(index) {
@@ -50,7 +44,8 @@ function Portfolio(props)
                                     key={"project" + index}
                                     src={project.coverImg}
                                     alt={project.title}
-                                    loading="lazy"
+                                    loading="eager"
+                                    onLoad={handleResize}
                                 />
                             ))}
 
@@ -63,8 +58,6 @@ function Portfolio(props)
                                         key={"overlay" + index}
                                         className="portfolioImgOverlay" 
                                         style={style}
-                                        onMouseEnter={() => showHovered(index)}
-                                        onMouseLeave={() => showHovered(-1)}
                                         onMouseDown={() => showProject(index)}
                                         >
                                             <h3 className="portfolioProjectTitle">{project.title}</h3>

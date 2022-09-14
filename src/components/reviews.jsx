@@ -27,7 +27,7 @@ function Reviews()
                                 delay: transitionTime
                             }}
                             className="reviewEntry">
-                                <img src={materias[index]}></img>
+                                <img src={materias[index]} alt="Thematic bullet point"></img>
                                 <h4>{review.author}</h4>
                                 <p>"{review.text}"</p>
                             </motion.div>
