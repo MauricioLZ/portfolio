@@ -6,6 +6,7 @@ import About from './components/about';
 import Reviews from './components/reviews';
 import Dialogue from './components/dialogue';
 import Contact from './components/contact';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() 
 {
@@ -34,24 +35,32 @@ function App()
         }));
     }
 
+    const url = window.location.href;
+
+    if (url.includes("about") && page !== 1) setPage(1);
+    else if (url.includes("references") && page !== 2) setPage(2);
+    else if (url.includes("contact") && page !== 3) setPage(3);
+
     return (
-        <div className="App">
-          <Sidebar onTopicClick={(index) => changePage(index)}></Sidebar>
-          <Dialogue></Dialogue>
-          { page === 0 && 
-              <Portfolio showOnFullScreen={showOnFullScreen} hideFullScreen={hideFullScreen}></Portfolio> 
-          }
-          {page === 1 &&
-              <About></About>
-          }
-          {page === 2 &&
-              <Reviews></Reviews>
-          }
-          {page === 3 &&
-              <Contact></Contact>
-          }
-          { fullScreen.isActive && fullScreen.element }
-        </div>
+        <BrowserRouter>
+            <div className="App">
+                <Sidebar page={page} onTopicClick={(index) => changePage(index)}></Sidebar>
+                <Dialogue></Dialogue>
+                { page === 0 && <Portfolio showOnFullScreen={showOnFullScreen} hideFullScreen={hideFullScreen}></Portfolio> }
+                { page === 1 && <About></About> }
+                { page === 2 && <Reviews></Reviews> }
+                { page === 3 && <Contact></Contact> }
+                { fullScreen.isActive && fullScreen.element }
+            </div>
+
+            <Routes>
+                <Route path="/" element={<Portfolio showOnFullScreen={showOnFullScreen} hideFullScreen={hideFullScreen} />} />
+                <Route path="/portfolio" element={<Portfolio showOnFullScreen={showOnFullScreen} hideFullScreen={hideFullScreen} />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/references" element={<Reviews />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 

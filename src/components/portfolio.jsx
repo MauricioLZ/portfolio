@@ -45,7 +45,7 @@ function Portfolio(props)
                                     src={project.coverImg}
                                     alt={project.title}
                                     loading="eager"
-                                    onLoad={handleResize}
+                                    onLoad={() => { if(index === 0) handleResize() }}
                                 />
                             ))}
 

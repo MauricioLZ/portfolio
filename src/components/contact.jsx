@@ -11,6 +11,7 @@ function Contact()
     const [email, setEmail] = useState("");
     const [submitMsg, setSubmitMsg] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [feedbackColorClass, setFeedbackColorClass] = useState("")
 
     function writeMessage(e) {
         const target = e.target;
@@ -28,8 +29,7 @@ function Contact()
     }
 
     function changeSubmitState(active, message, colorClass) {
-        const feedbackMsg = $(".contactFeedback")[0];
-        feedbackMsg.className = "contactFeedback " + colorClass;
+        setFeedbackColorClass(colorClass);
         setSubmitMsg(message);
         setIsSubmitting(!active);
     }
@@ -69,7 +69,7 @@ function Contact()
                     <input type="email" name="email" placeholder="Email" onChange={writeEmail} value={email}></input>
                     <textarea rows="6" name="message" placeholder="Message..." onChange={writeMessage} value={message}></textarea>
                     <div className="contactSubmitContainer">
-                        <p className="contactFeedback">{submitMsg}</p>
+                        <p className={"contactFeedback " + feedbackColorClass}>{submitMsg}</p>
                         { !isSubmitting && 
                             <button className="submitBtn" type="submit" name="submitBtn">Submit</button> 
                         }
