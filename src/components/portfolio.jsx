@@ -40,7 +40,9 @@ function Portfolio(props)
         <AnimatePresence>
             { projectIndex === -1 && 
                 <motion.section className="portfolio">
-                    <div>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}>
                         <h2>Portfolio</h2>
                         <div className="portfolioImgGroup">
                             {projects.map((project, index) => (
@@ -75,7 +77,7 @@ function Portfolio(props)
                                 })}
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </motion.section>
             }
 

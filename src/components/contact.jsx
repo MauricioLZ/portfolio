@@ -2,6 +2,7 @@ import { useState } from "react";
 import $ from 'jquery';
 import emailjs from '@emailjs/browser';
 import { CircularProgress } from "@mui/material";
+import { motion } from "framer-motion"
 
 function Contact()
 {
@@ -52,30 +53,34 @@ function Contact()
 
     return (
         <section className="contact">
-            <h2>Contact</h2>
-            <p className="contactDetails">
-                Mauricio Lopes Zugno
-                <br/>Ireland, Cork city
-                <br/>(+353) 085 172 9759
-                <br/>mauriciolopz@gmail.com
-            </p>
-            <p className="contactInstructions">Get in touch by sending me a message through the box below. If you want to be contacted back please write your name and email as well.</p>
-            <form onSubmit={onSubmit}>
-                <input type="text" name="name" placeholder="Name" onChange={writeName} value={name}></input>
-                <input type="email" name="email" placeholder="Email" onChange={writeEmail} value={email}></input>
-                <textarea rows="6" name="message" placeholder="Message..." onChange={writeMessage} value={message}></textarea>
-                <div className="contactSubmitContainer">
-                    <p className="contactFeedback">{submitMsg}</p>
-                    { !isSubmitting && 
-                        <button className="submitBtn" type="submit" name="submitBtn">Submit</button> 
-                    }
-                    {  isSubmitting && 
-                        <button className="submitLoad" name="submitLoad" disabled>
-                            <CircularProgress size="" className="loadSmall"/>
-                        </button> 
-                    }
-                </div>
-            </form>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}>
+                <h2>Contact</h2>
+                <p className="contactDetails">
+                    Mauricio Lopes Zugno
+                    <br/>Ireland, Cork city
+                    <br/>(+353) 085 172 9759
+                    <br/>mauriciolopz@gmail.com
+                </p>
+                <p className="contactInstructions">Get in touch by sending me a message through the box below. If you want to be contacted back please write your name and email as well.</p>
+                <form onSubmit={onSubmit}>
+                    <input type="text" name="name" placeholder="Name" onChange={writeName} value={name}></input>
+                    <input type="email" name="email" placeholder="Email" onChange={writeEmail} value={email}></input>
+                    <textarea rows="6" name="message" placeholder="Message..." onChange={writeMessage} value={message}></textarea>
+                    <div className="contactSubmitContainer">
+                        <p className="contactFeedback">{submitMsg}</p>
+                        { !isSubmitting && 
+                            <button className="submitBtn" type="submit" name="submitBtn">Submit</button> 
+                        }
+                        {  isSubmitting && 
+                            <button className="submitLoad" name="submitLoad" disabled>
+                                <CircularProgress size="" className="loadSmall"/>
+                            </button> 
+                        }
+                    </div>
+                </form>
+            </motion.div>
         </section>
     );
 }
