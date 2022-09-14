@@ -23,7 +23,7 @@ function Reviews()
                             }}
                             transition={{ 
                                 ease: "easeInOut",
-                                times: [0, 1],
+                                times: [0, 0.6],
                                 delay: transitionTime
                             }}
                             className="reviewEntry">

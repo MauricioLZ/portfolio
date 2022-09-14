@@ -486,6 +486,10 @@ html, body {
   margin-right: 50px;
 }
 
+.colorProgress {
+  color: #ffffff
+}
+
 .colorOk {
   color: #88ff88
 }
@@ -494,8 +498,10 @@ html, body {
   color: #ff8888
 }
 
-.contact button {
+.submitBtn, .submitLoad {
   display: inline-block;
+  width: 180px;
+  height: 50px;
   margin-top: 20px;
   padding: 6px 40px;
   border: white solid 3px;
@@ -505,9 +511,14 @@ html, body {
   font-size: 1.2rem;
 }
 
-.contact button:hover {
+.submitBtn button:hover {
   border: rgb(184, 181, 181) solid 3px;
   background-color: #232127;
+}
+
+.loadSmall {
+  width: 25px;
+  height: 25px;
 }
 
 /* width */
@@ -551,7 +562,7 @@ html, body {
   }
 }
 
-@media only screen and (min-width: 1300px) and (max-width: 1699px) {
+@media only screen and (min-width: 1300px) and (max-width: 1499px) {
   .portfolioImgGroup img {
     width: 30%;
   }
@@ -561,7 +572,7 @@ html, body {
   }
 }
 
-@media only screen and (min-width: 1700px) and (max-width: 2199px) {
+@media only screen and (min-width: 1500px) and (max-width: 1699px) {
   .portfolioImgGroup img {
     width: 23%;
   }
@@ -571,12 +582,12 @@ html, body {
   }
 }
 
-@media only screen and (min-width: 2200px) {
+@media only screen and (min-width: 1700px) {
   .portfolioImgGroup img {
-    width: 18%;
+    width: 18.5%;
   }
 
   .portfolioImgOverlay {
-    width: 18%;
+    width: 18.5%;
   }
 }

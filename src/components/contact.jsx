@@ -1,6 +1,7 @@
 import { useState } from "react";
 import $ from 'jquery';
 import emailjs from '@emailjs/browser';
+import { CircularProgress } from "@mui/material";
 
 function Contact()
 {
@@ -8,6 +9,7 @@ function Contact()
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [submitMsg, setSubmitMsg] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     function writeMessage(e) {
         const target = e.target;
@@ -24,21 +26,28 @@ function Contact()
         setEmail(target.value);
     }
 
+    function changeSubmitState(active, message, colorClass) {
+        const feedbackMsg = $(".contactFeedback")[0];
+        feedbackMsg.className = "contactFeedback " + colorClass;
+        setSubmitMsg(message);
+        setIsSubmitting(!active);
+    }
+
     function onSubmit(e) {
         e.preventDefault();
-        const feedbackMsg = $(".contactFeedback")[0];
         const target = e.target;
-        emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, target, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
-            .then((result) =>
-            {
-                feedbackMsg.className = "contactFeedback colorOk";
-                setSubmitMsg("Thank you, your message has been sent!");
-            },
-            (error) =>
-            {
-                feedbackMsg.className = "contactFeedback colorError";
-                setSubmitMsg("An error occurred, please try again.");
-            });
+
+        changeSubmitState(false, "Sending...", "colorProgress");
+
+        if (message.length > 0) {
+            
+            emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, target, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
+                .then((result) => changeSubmitState(true, "Thank you, your message has been sent!", "colorOk"),
+                    (error) => changeSubmitState(true, "An error occurred, please try again.", "colorError"));
+        }
+        else {
+            changeSubmitState(true, "Please write a message to submit.", "colorError");
+        }
     }
 
     return (
@@ -57,7 +66,14 @@ function Contact()
                 <textarea rows="6" name="message" placeholder="Message..." onChange={writeMessage} value={message}></textarea>
                 <div className="contactSubmitContainer">
                     <p className="contactFeedback">{submitMsg}</p>
-                    <button type="submit">Submit</button>
+                    { !isSubmitting && 
+                        <button className="submitBtn" type="submit" name="submitBtn">Submit</button> 
+                    }
+                    {  isSubmitting && 
+                        <button className="submitLoad" name="submitLoad" disabled>
+                            <CircularProgress size="" className="loadSmall"/>
+                        </button> 
+                    }
                 </div>
             </form>
         </section>
