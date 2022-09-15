@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import Project from "./project";
 import $ from "jquery";
 import { AnimatePresence, motion } from "framer-motion"
+import { useNavigate } from 'react-router-dom';
 
 function Portfolio(props)
 {
+    const navigate = useNavigate();
     const [projectIndex, setProjectIndex] = useState(-1);
     const [overlayHeight, setOverlayHeight] = useState("");
 
@@ -22,11 +24,8 @@ function Portfolio(props)
     }
 
     function showProject(index) {
+        navigate("/portfolio/" + projects[index].title);
         setProjectIndex(index);
-    }
-
-    function hideProject() {
-        setProjectIndex(-1);
     }
 
     return (
@@ -74,12 +73,8 @@ function Portfolio(props)
                 </motion.section>
             }
 
-            { projectIndex !== -1 &&
-                <Project
-                    hideProject={hideProject}
-                    index={projectIndex}
-                    showOnFullScreen={props.showOnFullScreen}>
-                </Project>
+            { projectIndex !== -1 && 
+                <Project showOnFullScreen={props.showOnFullScreen} /> 
             }
         </AnimatePresence>
     );

@@ -3,11 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft'
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons/faVolumeUp'
 import { motion } from "framer-motion"
+import { useNavigate } from "react-router-dom"
 
 function Project(props)
 {
+    const navigate = useNavigate();
+
     function goBack() {
-        props.hideProject();
+        navigate("/portfolio");
     }
 
     function playDescription() {
@@ -18,7 +21,8 @@ function Project(props)
         props.showOnFullScreen(<img src={imgSrc} alt="Fullscreen project screenshot"></img>);
     }
 
-    const project = projects[props.index];
+    const url = (window.location.href).replaceAll("%20", " ");
+    const project = projects.filter(function (p) { return url.toLowerCase().includes(p.title.toLowerCase()); })[0];
 
     return (
         <motion.section className="project"
@@ -28,7 +32,7 @@ function Project(props)
             <h2>{project.title}</h2>
             <div className="projectMedia">
                 {project.media.map((media, index) => (
-                    <img onMouseDown={() => showOnFullScreen(media)} key={index} src={media} alt="Project screenshot"/>
+                    <img onMouseDown={() => showOnFullScreen(media)} key={"media-" + index} src={media} alt="Project screenshot"/>
                 ))}
             </div>
             <div className="projectDescription">

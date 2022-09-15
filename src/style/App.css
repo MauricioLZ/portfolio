@@ -366,6 +366,7 @@ html, body {
   text-align: center;
   padding: 50px;
   background-color: rgba(34, 34, 34, 0.9);
+  z-index: 1;
 }
 
 .fullScreen div {

@@ -7,9 +7,11 @@ import Reviews from './components/reviews';
 import Dialogue from './components/dialogue';
 import Contact from './components/contact';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Project from './components/project';
 
 function App() 
 {
+    
     const [page, setPage] = useState(0);
     const [fullScreen, setFullScreen] = useState({ 
         isActive: false, 
@@ -17,7 +19,6 @@ function App()
     });
 
     function changePage(index) {
-        console.log();
         setPage(index);
     }
 
@@ -37,25 +38,26 @@ function App()
 
     const url = window.location.href;
 
-    if (url.includes("about") && page !== 1) setPage(1);
-    else if (url.includes("references") && page !== 2) setPage(2);
-    else if (url.includes("contact") && page !== 3) setPage(3);
+    if (url.toLowerCase().includes("about") && page !== 1) setPage(1);
+    else if (url.toLowerCase().includes("references") && page !== 2) setPage(2);
+    else if (url.toLowerCase().includes("contact") && page !== 3) setPage(3);
 
     return (
         <BrowserRouter>
             <div className="App">
                 <Sidebar page={page} onTopicClick={(index) => changePage(index)}></Sidebar>
                 <Dialogue></Dialogue>
-                { page === 0 && <Portfolio showOnFullScreen={showOnFullScreen} hideFullScreen={hideFullScreen}></Portfolio> }
-                { page === 1 && <About></About> }
+                { page === 0 && <Portfolio showOnFullScreen={showOnFullScreen}></Portfolio> }
+                { page === 1 && <About showOnFullScreen={showOnFullScreen}></About> }
                 { page === 2 && <Reviews></Reviews> }
                 { page === 3 && <Contact></Contact> }
                 { fullScreen.isActive && fullScreen.element }
             </div>
 
             <Routes>
-                <Route path="/" element={<Portfolio showOnFullScreen={showOnFullScreen} hideFullScreen={hideFullScreen} />} />
-                <Route path="/portfolio" element={<Portfolio showOnFullScreen={showOnFullScreen} hideFullScreen={hideFullScreen} />} />
+                <Route path="/*" element={<Portfolio showOnFullScreen={showOnFullScreen} />} />
+                <Route path="/portfolio/*" element={<Portfolio showOnFullScreen={showOnFullScreen} />} />
+                <Route path="/portfolio/:projectTitle" element={<Project showOnFullScreen={showOnFullScreen}></Project>} />
                 <Route path="/about" element={<About />} />
                 <Route path="/references" element={<Reviews />} />
                 <Route path="/contact" element={<Contact />} />

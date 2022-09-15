@@ -1,13 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import photo from "../img/photoMauricio.jpg";
 import cursor from "../img/cursorFF7.png";
+import { Link } from "react-router-dom";
 
 function Sidebar(props)
 {
     const [page, setPage] = useState(0);
-    
     let age, day1, yearProgression, totalDaysInYear;
+
+    useEffect(resetCursorPosition, [page]);
+    useEffect(() => {
+        if (document.readyState === "complete") {
+            onPageLoad();
+        } 
+        else {
+            window.addEventListener("load", onPageLoad);
+            return () => window.removeEventListener("load", onPageLoad);
+        }
+    }, []);
+
     setLevelAndXp();
+
+    function onPageLoad() {
+        if (props.page !== page) {
+            setPage(props.page);
+        }
+    }
 
     function setLevelAndXp() {
         const today = new Date();
@@ -42,7 +60,8 @@ function Sidebar(props)
         setPage(index);
     }
 
-    const topics = ["Materials", "Status", "References", "Contact"]
+    const topics = ["Materials", "Status", "References", "Contact"];
+    const links = ["portfolio", "about", "references", "contact"];
 
     return (
         <div className="sidebar">
@@ -58,11 +77,11 @@ function Sidebar(props)
                 </div>
                 <div className="topics">
                     {topics.map((topic, index) => {
-                        return <a href="#"
+                        return <Link to={"/" + links[index]}
                             key={index}
                             onMouseDown={() => onTopicClick(index)}
                             onMouseEnter={() => changeCursorPositionToIndex(index)}
-                            onMouseLeave={resetCursorPosition}>{topic}</a>
+                            onMouseLeave={resetCursorPosition}>{topic}</Link>
                     })}
                 </div>
             </div>
