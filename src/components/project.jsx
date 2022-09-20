@@ -36,7 +36,11 @@ function Project(props)
                 ))}
             </div>
             <div className="projectDescription">
-                <p>{project.description}</p>
+                <p>{project.description.split("\n").map((paragraph, index) => 
+                    <span key={project.title + "-p" + index}>
+                        {paragraph}<br/>
+                    </span>)}
+                </p>
             </div>
             <div className="projectAudioDescription" onMouseDown={playDescription}>
                 <FontAwesomeIcon icon={faVolumeUp} size="2x" />
