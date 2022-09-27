@@ -38,7 +38,7 @@ function Portfolio(props)
                         animate={{ opacity: 1 }}>
                         <h2>Portfolio</h2>
                         <div className="portfolioImgGroup">
-                            {projects.map((project, index) => (
+                            {/* {projects.map((project, index) => (
                                 <img
                                     key={"project" + index}
                                     src={project.coverImg}
@@ -46,7 +46,7 @@ function Portfolio(props)
                                     loading="eager"
                                     onLoad={() => { if(index === 0) handleResize() }}
                                 />
-                            ))}
+                            ))} */}
 
                             <div className="portfolioOverlays">
                                 {projects.map((project, index) => 
