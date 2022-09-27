@@ -43,7 +43,7 @@ function Portfolio(props)
                                     key={"project" + index}
                                     src={project.coverImg}
                                     alt={project.title}
-                                    loading="lazy"
+                                    loading="eager"
                                     onLoad={() => { if(index === 0) handleResize() }}
                                 />
                             ))}
