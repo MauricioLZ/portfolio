@@ -44,7 +44,8 @@ function App()
 
     return (
         <BrowserRouter>
-            <div className="App">
+            <p> HELLO</p>
+            {/* <div className="App">
                 <Sidebar page={page} onTopicClick={(index) => changePage(index)}></Sidebar>
                 <Dialogue></Dialogue>
                 { page === 0 && <Portfolio showOnFullScreen={showOnFullScreen}></Portfolio> }
@@ -61,7 +62,7 @@ function App()
                 <Route path="/about" element={<About />} />
                 <Route path="/references" element={<Reviews />} />
                 <Route path="/contact" element={<Contact />} />
-            </Routes>
+            </Routes> */}
         </BrowserRouter>
     );
 }
