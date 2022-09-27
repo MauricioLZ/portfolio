@@ -1,13 +1,22 @@
+import { motion } from "framer-motion";
+import infj from "../img/infj.png"
+import lelouch from "../img/lelouch-round.png"
+
 function About()
 {
     return (
-        <section id="About">
-            <img className="aboutImg1" src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e" alt="About"></img>
-            <p className="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit leo eget tempus viverra. Pellentesque eu nisi ac sapien sagittis luctus porttitor sed felis. Pellentesque vitae facilisis ipsum, sit amet ultricies nisl. Nunc eu dapibus nisl. Etiam vehicula nibh in nibh malesuada, eget faucibus massa pulvinar. Nulla porta eleifend egestas. Morbi in vestibulum eros. Donec viverra ornare erat ac sodales. Sed sodales aliquet lectus ut feugiat. Donec dictum purus ac rutrum congue. Nam gravida quis turpis ut convallis.
-                Aenean malesuada purus non quam interdum accumsan. Vivamus nulla quam, laoreet nec hendrerit id, malesuada ut nunc. Donec ut felis orci. Morbi eget odio posuere, suscipit orci vitae, vulputate erat. Duis dignissim est non tempus vulputate. Sed non viverra libero, id vehicula augue. Nulla imperdiet tellus vel laoreet iaculis.
-            </p>
-            <img className="aboutImg2" src="https://images.unsplash.com/photo-1567306301408-9b74779a11af" alt="About 2"></img>
-            <p className="aboutText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit leo eget tempus viverra. Pellentesque eu nisi ac sapien sagittis luctus porttitor sed felis. Pellentesque vitae facilisis ipsum, sit amet ultricies nisl. Nunc eu dapibus nisl. Etiam vehicula nibh in nibh malesuada, eget faucibus massa pulvinar. Nulla porta eleifend egestas. Morbi in vestibulum eros. Donec viverra ornare erat ac sodales. Sed sodales aliquet lectus ut feugiat. Donec dictum purus ac rutrum congue. Nam gravida quis turpis ut convallis.</p>
+        <section className="about">
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}>
+                <h2>About</h2>
+                <img className="infjImg" src={infj} loading="eager" alt="INFJ characteristics"></img>
+                <p>Born in Brazil I studied Game Development at Unisinos in Porto Alegre. My good grades granted me the opportunity of a 1 year scholarship for an exchange in Computer Science in Canada at Wilfrid Laurier in 2015. Since then I lived and worked in Brazil, France and Ireland, where I am based now.
+                    <br/><br/>I am quite adaptive and open to new experiences and I enjoy learning new skills and having challenges along the way. What may put me off in a challenge though is if it comes accompanied with too much pressure.
+                    <br/><br/><br/>If you know what INFJ means than you may already know a good deal about me. Of course I don’t match everything INFJ, but many things are surprisingly accurate for me.
+                    <br/><br/>My game tag is usually Demirus and I frequently use Lelouch from Code Geass as my avatar image.</p>
+                <img className="lelouchImg" src={lelouch} loading="eager" alt="Discord avatar"></img>
+            </motion.div>
         </section>
     );
 }

@@ -1,12 +1,17 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
+  margin: 0px;
+  background-color: #222222;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
+#root {
+  background-color: #222222;
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
 
 .App-header {
   background-image: linear-gradient(rgb(159, 207, 159), #61a6af);
@@ -23,49 +28,750 @@
   margin-top: 40px;
 }
 
-.sectionsLinks {
+/* SIDEBAR */
+
+.sidebar {
+  position: absolute;
+  text-align: center;
+  width: 250px;
+  top: 15px;
+  left: 15px;
+  bottom: 15px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+}
+
+.profileImg {
+  width: 80%;
+  margin-top: 30px;
+}
+
+.level {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #0c8ea8;
+}
+
+.level span {
+  color: white;
+}
+
+.expGauge {
+  height: 18px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+  background-color: #737476;
+  border: 2px solid white;
+}
+
+.expGauge div {
+  height: 100%;
+  background-color: #fda8ab;
+}
+
+.expGauge p {
+  margin-top: 5px;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.topicsGrid {
+  display: grid;
+  grid-template-areas: 
+    "cursor topic topic topic";
+}
+
+.cursorContainer {
+  display: inline-block;
+  grid-area: cursor;
+  width: 80px;
+  height: 180px;
+}
+
+.cursorContainer img {
+  display: block;
+  margin-left: 20px;
+  margin-top: 14px;
+  animation: cursorAnimation 1s infinite;
+}
+
+@keyframes cursorAnimation {
+  0%   { margin-left: 15px; }
+  50%  { margin-left: 20px; }
+  100% { margin-left: 15px; }
+}
+
+.topics {
+  display: inline-block;
+  grid-area: topic;
+  height: 180px;
+}
+
+.topics a {
+  display: block;
+  text-align: left;
+  font-size: 1.7em;
+  text-decoration: none;
+  color: white;
+}
+
+.topics a:hover {
+  color: #0c8ea8;
+}
+
+/* DIALOGUE */
+
+.dialogue {
+  position: absolute;
+  text-align: left;
+  width: 500px;
+  top: 30px;
+  left: 300px;
+  height: 130px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 15px;
+}
+
+.dialogue h1 {
+  font-size: 1.2rem;
+}
+
+.dialogue p {
+  font-size: 1.2rem;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 40px;
+  overflow-y: scroll;
+}
+
+.portfolio h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.portfolioImgGroup {
+  display: inline;
+  width: 100%;
+}
+
+.portfolioImgGroup img {
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 3px solid white;
+  /* Element size changed by screen size (see @media) */
+}
+
+.portfolioOverlays {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px;
+  top: 67px;
+  left: 0;
+  user-select: none;
+}
+
+.portfolioImgOverlay {
+  display: inline-block;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: rgba(34, 34, 34, 0.9);
+  border: 3px solid white;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.portfolioImgOverlay:hover {
+  opacity: 1;
+}
+
+.portfolioProjectTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  height: 50%;
+}
+
+.line {
+  display: block;
+  margin: 0 20px;
+  height: 1px;
+  background-color: white;
+}
+
+.portfolioProjectPlatforms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 24%;
+}
+
+.portfolioProjectPlatforms p {
+  margin: 0;
+}
+
+.portfolioProjectPlatforms p span {
+  margin-right: 8px;
+  padding: 2px 4px 4px 4px;
+  border-radius: 4px;
+  border: solid 1px white;
+}
+
+.portfolioProjectEngine {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  height: 25%;
+}
+
+/* PROJECT */
+
+.project {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #0053ad;
+  border: 3px solid white;
+  color: white;
+  padding: 40px;
+  overflow-y: scroll;
+}
+
+.backBtn {
+  position: absolute;
+}
+
+.project h2 {
+  display: block;
+  margin: 0 60px 40px;
+  text-align: center;
+}
+
+.projectMedia {
+  display: inline-block;
+  width: 50%;
+}
+
+.projectMedia img {
+  text-align: center;
+  width: 220px;
+  min-height: 150px;
+  max-height: 250px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 3px solid white;
+  object-fit: cover;
+}
+
+.projectDescription {
+  display: inline-block;
+  margin-left: 3%;
+  width: 47%;
+  vertical-align: top;
+  font-size: 1.2rem;
+}
+
+.projectAudioDescription {
+  position: absolute;
+  right: 60px;
+  bottom: 0;
+  text-align: center;
+}
+
+.projectAudioDescription p {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+/* ABOUT */
+
+.about {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 0;
+  min-height: 600px;
+  overflow-y: scroll;
+}
+
+.about div {
+  position: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+
+.about h2 {
+  display: block;
+  margin: 0 60px 40px;
+  text-align: center;
+}
+
+.infjImg {
+  display: inline;
+  height: 85%;
+  margin-right: 40px;
+  overflow-y: initial;
+}
+
+.about p {
+  position: inherit;
+  display: inline;
+  margin-right: 30px;
+  font-size: 1.2rem;
+}
+
+.lelouchImg {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+/* FULL SCREEN */
+
+.fullScreen {
   position: absolute;
   width: 100%;
-  bottom: 40px;
-}
-
-.sectionsLinks a {
-  display: inline-block;
-  width: 15%;
-  color: #313131;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.sectionsLinks a:hover {
-  color: #4b3850;
-}
-
-.portfolioImgGrid {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  width: auto;
-  padding: 200px 300px;
-}
-
-.portfolioImgGrid img {
+  height: 100%;
   text-align: center;
+  padding: 50px;
+  background-color: rgba(34, 34, 34, 0.9);
+  z-index: 1;
+}
+
+.fullScreen div {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.fullScreen div img {
+  height: 100%;
+}
+
+/* REVIEWS */
+
+.reviews {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 40px;
+  min-height: 600px;
+  overflow-y: scroll;
+}
+
+.reviews h2 {
+  display: block;
+  margin: 0 60px 60px;
+  text-align: center;
+}
+
+.reviewsList {
+  margin: 0px 80px;
+}
+
+.reviewEntry {
+  margin-bottom: 50px;
+}
+
+.reviewEntry img {
+  border-radius: 50%;
+  border: #cfcfcf solid 2px;
+}
+
+.reviewEntry h4 {
+  display: inline;
+  margin-left: 10px;
+  vertical-align: middle;
+  font-weight: 400;
+}
+
+.reviewEntry p {
+  margin-top: 10px;
+  margin-left: 40px;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/* CONTACT */ 
+
+.contact {
+  position: absolute;
+  text-align: left;
+  top: 200px;
+  left: 330px;
+  right: 70px;
+  bottom: 70px;
+  border-radius: 10px;
+  background-color: #08039e;
+  border: 3px solid white;
+  color: white;
+  padding: 40px 120px;
+  min-height: 600px;
+  overflow-y: scroll;
+}
+
+.contact h2 {
+  display: block;
+  margin: 0 60px 60px;
+  text-align: center;
+}
+
+.contactDetails {
+  font-size: 1.2rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  line-height: 160%;
+}
+
+.contactInstructions {
+  font-size: 1.2rem;
+}
+
+.contact input {
+  display: block;
+  width: 300px;
+  padding: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: #28293d solid 3px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact textarea {
+  display: block;
   width: 100%;
-  padding-right: 15px;
-  padding-bottom: 15px;
+  padding: 10px;
+  border: #28293d solid 3px;
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
-.aboutImg1 {
-  width: 200px;
-  margin-right: 15px;
+.contactSubmitContainer {
+  margin-right: 40px;
+  text-align: end;
 }
 
-.aboutImg2 {
-  width: 200px;
-  margin-right: 15px;
-}
-
-.reviewsCarousel {
+.contactFeedback {
   display: inline-block;
-  text-align: center;
+  font-size: 1.2rem;
+  margin-right: 50px;
+}
+
+.colorProgress {
+  color: #ffffff
+}
+
+.colorOk {
+  color: #88ff88
+}
+
+.colorError {
+  color: #ff8888
+}
+
+.submitBtn, .submitLoad {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  margin-top: 20px;
+  padding: 6px 40px;
+  border: white solid 3px;
+  border-radius: 8px;
+  background-color: #28293d;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.submitBtn button:hover {
+  border: rgb(184, 181, 181) solid 3px;
+  background-color: #232127;
+}
+
+.loadSmall {
+  width: 25px;
+  height: 25px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #a6d7ff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4843fe;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2823ae;
+}
+
+@media only screen and (max-width: 799px) {
+  .sidebar {
+    width: 200px;
+    font-size: 0.7rem;
+  }
+  .topics a {
+    margin-bottom: 12px;
+  }
+  .cursorContainer {
+    width: 40px;
+  }
+  .cursorContainer img {
+    width: 30px;
+  }
+  .expGauge {
+    height: 12px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 250px;
+    padding: 40px 20px;
+  }
+  .about, .dialogue {
+    left: 250px;
+  }
+  .portfolioOverlays {
+    padding: 40px 20px;
+  }
+
+  .portfolioImgGroup img {
+    width: 100%;
+  }
+
+  .portfolioImgOverlay {
+    width: 100%;
+    margin-right: 0px;
+  }
+
+  .projectMedia img {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1299px) {
+  .sidebar {
+    width: 200px;
+    font-size: 0.7rem;
+  }
+  .topics a {
+    margin-bottom: 12px;
+  }
+  .cursorContainer {
+    width: 40px;
+  }
+  .cursorContainer img {
+    width: 30px;
+  }
+  .expGauge {
+    height: 12px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 250px;
+    padding: 40px 40px;
+  }
+  .about, .dialogue {
+    left: 250px;
+  }
+  .portfolioOverlays {
+    padding: 40px 40px;
+  }
+
+  .portfolioImgGroup img {
+    width: 45%;
+  }
+
+  .portfolioImgOverlay {
+    width: 45%;
+  }
+
+  .projectMedia img {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 1499px) {
+  .sidebar {
+    width: 215px;
+    font-size: 0.8rem;
+  }
+  .topics a {
+    margin-bottom: 8px;
+  }
+  .cursorContainer {
+    width: 50px;
+  }
+  .cursorContainer img {
+    width: 35px;
+  }
+  .expGauge {
+    height: 14px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 280px;
+    padding: 40px 70px;
+  }
+  .about, .dialogue {
+    left: 280px;
+  }
+  .portfolioOverlays {
+    padding: 40px 70px;
+  }
+
+  .portfolioImgGroup img {
+    width: 30%;
+  }
+
+  .portfolioImgOverlay {
+    width: 30%;
+  }
+
+  .projectMedia img {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1500px) and (max-width: 1699px) {
+  .sidebar {
+    width: 230px;
+    font-size: 0.9rem;
+  }
+  .topics a {
+    margin-bottom: 5px;
+  }
+  .cursorContainer {
+    width: 65px;
+  }
+  .cursorContainer img {
+    width: 40px;
+  }
+  .expGauge {
+    height: 16px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 310px;
+    padding: 40px 100px;
+  }
+  .about, .dialogue {
+    left: 310px;
+  }
+  .portfolioOverlays {
+    padding: 40px 100px;
+  }
+  
+  .portfolioImgGroup img {
+    width: 23%;
+  }
+
+  .portfolioImgOverlay {
+    width: 23%;
+  }
+
+  .projectMedia img {
+    width: 47%;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .sidebar {
+    width: 250px;
+    font-size: 1.0rem;
+  }
+  .topics a {
+    margin-bottom: 0px;
+  }
+  .cursorContainer {
+    width: 80px;
+  }
+  .cursorContainer img {
+    width: 47px;
+  }
+  .expGauge {
+    height: 18px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 330px;
+    padding: 40px 120px;
+  }
+  .about, .dialogue {
+    left: 330px;
+  }
+  .portfolioOverlays {
+    padding: 40px 120px;
+  }
+
+  .portfolioImgGroup img {
+    width: 18.5%;
+  }
+
+  .portfolioImgOverlay {
+    width: 18.5%;
+  }
+
+  .projectMedia img {
+    width: 47%;
+  }
 }

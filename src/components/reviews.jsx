@@ -1,50 +1,39 @@
-import itemData from "../data/itemData";
-import Carousel from 'react-bootstrap/Carousel';
+import reviews from "../data/reviews-data";
+import materias from "../img/materias/materias"
+import { motion } from "framer-motion"
 
 function Reviews()
 {
+    const timeStep = 0.3;
+    let transitionTime = -timeStep;
+
     return (
-        <section id="Reviews">
-            <Carousel className="w-50 reviewsCarousel">
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={itemData[3].img}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={itemData[4].img}
-                        alt="Second slide"
-                    />
+        <section className="reviews">
+            <h2>References</h2>
+            <div className="reviewsList">
+                {reviews.map((review, index) => {
 
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={itemData[5].img}
-                        alt="Third slide"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </section>
+                    transitionTime += timeStep;
+                    
+                    return <motion.div
+                            key={"review" + index}
+                            animate={{ 
+                                opacity: [0, 1],
+                                x: [-50, 0]
+                            }}
+                            transition={{ 
+                                ease: "easeInOut",
+                                times: [0, 0.6],
+                                delay: transitionTime
+                            }}
+                            className="reviewEntry">
+                                <img src={materias[index]} alt="Thematic bullet point"></img>
+                                <h4>{review.author}</h4>
+                                <p>"{review.text}"</p>
+                            </motion.div>
+                })}
+            </div>
+        </section> 
     );
 }
 
