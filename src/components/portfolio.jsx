@@ -62,7 +62,9 @@ function Portfolio(props)
                                             <h3 className="portfolioProjectTitle">{project.title}</h3>
                                             <div className="line"></div>
                                             <div className="portfolioProjectPlatforms">
-                                                <p>{project.platforms}</p>
+                                                <p>{project.platforms.map((tag) => 
+                                                   <span key={project.title + tag}>{tag}</span>
+                                                )}</p>
                                             </div>
                                             <h3 className="portfolioProjectEngine">{project.engine}</h3>
                                         </motion.div>

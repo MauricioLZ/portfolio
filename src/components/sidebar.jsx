@@ -60,8 +60,8 @@ function Sidebar(props)
         setPage(index);
     }
 
-    const topics = ["Materials", "Status", "References", "Contact"];
-    const links = ["portfolio", "about", "references", "contact"];
+    const topics = ["Materials", "Status"/*, "References"*/, "Contact"];
+    const links = ["portfolio", "about"/*, "references"*/, "contact"];
 
     return (
         <div className="sidebar">

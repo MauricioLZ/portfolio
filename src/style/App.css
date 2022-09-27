@@ -43,7 +43,7 @@ html, body {
 }
 
 .profileImg {
-  width: 180px;
+  width: 80%;
   margin-top: 30px;
 }
 
@@ -59,11 +59,11 @@ html, body {
 
 .expGauge {
   height: 18px;
-  width: 180px;
+  width: 80%;
   margin: auto;
   margin-bottom: 40px;
   background-color: #737476;
-  border: 3px solid white;
+  border: 2px solid white;
 }
 
 .expGauge div {
@@ -112,7 +112,7 @@ html, body {
 .topics a {
   display: block;
   text-align: left;
-  font-size: 1.7rem;
+  font-size: 1.7em;
   text-decoration: none;
   color: white;
 }
@@ -234,6 +234,13 @@ html, body {
 
 .portfolioProjectPlatforms p {
   margin: 0;
+}
+
+.portfolioProjectPlatforms p span {
+  margin-right: 8px;
+  padding: 2px 4px 4px 4px;
+  border-radius: 4px;
+  border: solid 1px white;
 }
 
 .portfolioProjectEngine {
@@ -558,7 +565,35 @@ html, body {
   background: #2823ae;
 }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 799px) {
+  .sidebar {
+    width: 200px;
+    font-size: 0.7rem;
+  }
+  .topics a {
+    margin-bottom: 12px;
+  }
+  .cursorContainer {
+    width: 40px;
+  }
+  .cursorContainer img {
+    width: 30px;
+  }
+  .expGauge {
+    height: 12px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 250px;
+    padding: 40px 20px;
+  }
+  .about, .dialogue {
+    left: 250px;
+  }
+  .portfolioOverlays {
+    padding: 40px 20px;
+  }
+
   .portfolioImgGroup img {
     width: 100%;
   }
@@ -573,7 +608,35 @@ html, body {
   }
 }
 
-@media only screen and (min-width: 1000px) and (max-width: 1299px) {
+@media only screen and (min-width: 800px) and (max-width: 1299px) {
+  .sidebar {
+    width: 200px;
+    font-size: 0.7rem;
+  }
+  .topics a {
+    margin-bottom: 12px;
+  }
+  .cursorContainer {
+    width: 40px;
+  }
+  .cursorContainer img {
+    width: 30px;
+  }
+  .expGauge {
+    height: 12px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 250px;
+    padding: 40px 40px;
+  }
+  .about, .dialogue {
+    left: 250px;
+  }
+  .portfolioOverlays {
+    padding: 40px 40px;
+  }
+
   .portfolioImgGroup img {
     width: 45%;
   }
@@ -588,6 +651,34 @@ html, body {
 }
 
 @media only screen and (min-width: 1300px) and (max-width: 1499px) {
+  .sidebar {
+    width: 215px;
+    font-size: 0.8rem;
+  }
+  .topics a {
+    margin-bottom: 8px;
+  }
+  .cursorContainer {
+    width: 50px;
+  }
+  .cursorContainer img {
+    width: 35px;
+  }
+  .expGauge {
+    height: 14px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 280px;
+    padding: 40px 70px;
+  }
+  .about, .dialogue {
+    left: 280px;
+  }
+  .portfolioOverlays {
+    padding: 40px 70px;
+  }
+
   .portfolioImgGroup img {
     width: 30%;
   }
@@ -602,6 +693,34 @@ html, body {
 }
 
 @media only screen and (min-width: 1500px) and (max-width: 1699px) {
+  .sidebar {
+    width: 230px;
+    font-size: 0.9rem;
+  }
+  .topics a {
+    margin-bottom: 5px;
+  }
+  .cursorContainer {
+    width: 65px;
+  }
+  .cursorContainer img {
+    width: 40px;
+  }
+  .expGauge {
+    height: 16px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 310px;
+    padding: 40px 100px;
+  }
+  .about, .dialogue {
+    left: 310px;
+  }
+  .portfolioOverlays {
+    padding: 40px 100px;
+  }
+  
   .portfolioImgGroup img {
     width: 23%;
   }
@@ -616,6 +735,34 @@ html, body {
 }
 
 @media only screen and (min-width: 1700px) {
+  .sidebar {
+    width: 250px;
+    font-size: 1.0rem;
+  }
+  .topics a {
+    margin-bottom: 0px;
+  }
+  .cursorContainer {
+    width: 80px;
+  }
+  .cursorContainer img {
+    width: 47px;
+  }
+  .expGauge {
+    height: 18px;
+  }
+
+  .portfolio, .project, .reviews, .contact {
+    left: 330px;
+    padding: 40px 120px;
+  }
+  .about, .dialogue {
+    left: 330px;
+  }
+  .portfolioOverlays {
+    padding: 40px 120px;
+  }
+
   .portfolioImgGroup img {
     width: 18.5%;
   }
