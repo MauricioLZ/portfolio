@@ -37,10 +37,10 @@ function Project(props)
                     </span>)}
                 </p>
             </div>
-            <div className="projectAudioDescription" onMouseDown={playDescription}>
+            {/* <div className="projectAudioDescription" onMouseDown={playDescription}>
                 <FontAwesomeIcon icon={faVolumeUp} size="2x" />
                 <p>Audio Description</p>
-            </div>
+            </div> */}
         </motion.section>
     );
 }

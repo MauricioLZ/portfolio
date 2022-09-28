@@ -4,8 +4,8 @@ const projects = [
         year: 2022,
         platforms: ["Website", "PC"],
         engine: "React JS",
-        coverImg: "https://i.imgur.com/rudNu09.png",
-        media: [],
+        coverImg: "https://i.imgur.com/AZ4EzOS.jpg",
+        media: ["https://i.imgur.com/5ZA7xd1.png", "https://i.imgur.com/mFOtBVo.png", "https://i.imgur.com/xqYGnrK.png", "https://i.imgur.com/ckFflL2.png"],
         link: "",
         description: "This very website that you're seeing! I got really excited once I thought about this Final Fantasy VII theme for it and it just took me a few weeks to get everything in order.\n\nThis was a great opportunity to practice my React skils. I learned React in 2019 and used it for work, but since then I hadn't really had the chance to come back to it. After taking a course in fullstack development earlier in 2022 this website ended up being the result of my prior knowledge with React combined with newly developed skills."
     },
@@ -24,8 +24,8 @@ const projects = [
         year: 2018,
         platforms: ["App", "Mobile"],
         engine: "Xamarin C#",
-        coverImg: "https://i.imgur.com/8oOLEuX.jpg",
-        media: [],
+        coverImg: "https://i.imgur.com/GnUlW03.jpg",
+        media: ["https://i.imgur.com/RS628fu.png", "https://i.imgur.com/98FHpNI.png", "https://i.imgur.com/CgJDKFp.png", "https://i.imgur.com/l0haG0o.png"],
         link: "",
         description: "Demetra is an app designed to help agricultors manage and improve their production. Connected to a database it lets the user search for existing products and register and visualize activities in their farms. These activities can be fertilizations, prunnings, product applications and others.\n\nIt is an app owned by Elysios and a project in which I was responsible for most of the initial work along with two coleagues. I designed the initial UX since we didn't have anyone specialized in that at the time and was also responsible for the majority of front end components. I also managed a part of the back end, even though the database itself was built by another colleague. It is available only in Brazil's App and Play stores."
     },
@@ -37,7 +37,7 @@ const projects = [
         coverImg: "https://i.imgur.com/OKVHGCI.jpg",
         media: ["https://i.imgur.com/WbfoNZb.jpg", "https://i.imgur.com/wNqtRyn.jpg", "https://i.imgur.com/abRK9pL.jpg", "https://i.imgur.com/oYIzHKM.jpg"],
         link: "",
-        description: ""
+        description: "Peregrino is a prototype app made as an auxiliary material for a client's master degree in philosophy. It is meant to be an idea of what could be done and how information could be accessed and shared by people interested in making walks and hikes.\n\nThis prototype was a freelance project in which I worked alone while learning Cordova and had my first attempt in making an app with HTML, CSS and javascript. It is currently available in Google's Play Store as a beta test version only to authorized people."
     },
     {
         title: "Ultra Foodmess",
@@ -64,10 +64,10 @@ const projects = [
         year: 2017,
         platforms: ["Game", "PC", "Mobile"],
         engine: "Unity C#",
-        coverImg: "https://i.imgur.com/QwLpWDy.jpg",
-        media: [""],
+        coverImg: "https://i.imgur.com/DEPbDyP.png",
+        media: ["https://i.imgur.com/a40eFd1.png", "https://i.imgur.com/DN9OTFA.png", "https://i.imgur.com/F0uQXKo.png", "https://i.imgur.com/jDgrA4n.png"],
         link: "https://apkpure.com/treinamento-virtual-lofra/com.riftpoint.lofra.treinamentovirtuallofra",
-        description: "Treinamento Virtual Lofra is an educational game for internal use that helped employees learn about their companies products. It was deployed both for mobile (Android and iOS) and web.\n\nThis game was made by Riftpoint by a team of 5 people in which I was responsible for most of the user interface (UI), animations and screen transitions. We faced some challenges with memory allocation, especially for web, but we solved it by changin the load pattern for images into the app."
+        description: "Treinamento Virtual Lofra is an educational game for internal use that helped employees learn about their companies products. It was deployed both for mobile (Android and iOS) and web.\n\nThis game was made by Riftpoint by a team of 5 people in which I was responsible for most of the user interface (UI), animations and screen transitions. We faced some challenges with memory allocation, especially for web, but we solved it by changing the load pattern for images into the app."
     },
     {
         title: "Rush Hour",

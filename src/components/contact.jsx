@@ -71,7 +71,7 @@ function Contact()
                 <form onSubmit={onSubmit}>
                     <input type="text" name="name" placeholder="Name" onChange={writeName} value={name}></input>
                     <input type="email" name="email" placeholder="Email" onChange={writeEmail} value={email}></input>
-                    <textarea rows="6" name="message" placeholder="Message..." onChange={writeMessage} value={message}></textarea>
+                    <textarea rows="3" name="message" placeholder="Message..." onChange={writeMessage} value={message}></textarea>
                     <div className="contactSubmitContainer">
                         <p className={"contactFeedback " + feedbackColorClass}>{submitMsg}</p>
                         { !isSubmitting && 

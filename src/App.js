@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './style/App.css';
+import './style/responsive.css';
 import Sidebar from './components/sidebar';
 import Portfolio from './components/portfolio';
 import About from './components/about';
