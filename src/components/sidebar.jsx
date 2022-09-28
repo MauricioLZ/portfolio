@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import photo from "../img/photoMauricio.jpg";
 import cursor from "../img/cursorFF7.png";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 function Sidebar(props)
 {
@@ -77,11 +77,16 @@ function Sidebar(props)
                 </div>
                 <div className="topics">
                     {topics.map((topic, index) => {
-                        return <Link to={"/" + links[index]}
+                        return <a
                             key={index}
                             onMouseDown={() => onTopicClick(index)}
                             onMouseEnter={() => changeCursorPositionToIndex(index)}
-                            onMouseLeave={resetCursorPosition}>{topic}</Link>
+                            onMouseLeave={resetCursorPosition}>{topic}</a>
+                        // return <Link to={"/" + links[index]}
+                        //     key={index}
+                        //     onMouseDown={() => onTopicClick(index)}
+                        //     onMouseEnter={() => changeCursorPositionToIndex(index)}
+                        //     onMouseLeave={resetCursorPosition}>{topic}</Link>
                     })}
                 </div>
             </div>

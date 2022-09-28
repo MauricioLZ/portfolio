@@ -1,5 +1,4 @@
 import { useState } from "react";
-import $ from 'jquery';
 import emailjs from '@emailjs/browser';
 import { CircularProgress } from "@mui/material";
 import { motion } from "framer-motion"

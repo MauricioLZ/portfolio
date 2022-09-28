@@ -6,8 +6,8 @@ import About from './components/about';
 import Reviews from './components/reviews';
 import Dialogue from './components/dialogue';
 import Contact from './components/contact';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Project from './components/project';
+//import { BrowserRouter, Route, Routes } from 'react-router-dom';
+//import Project from './components/project';
 
 function App() 
 {
@@ -43,7 +43,7 @@ function App()
     else if (url.toLowerCase().includes("contact") && page !== 3) setPage(3);
 
     return (
-        <BrowserRouter>
+        //<BrowserRouter>
             <div className="App">
                 <Sidebar page={page} onTopicClick={(index) => changePage(index)}></Sidebar>
                 <Dialogue></Dialogue>
@@ -54,7 +54,7 @@ function App()
                 { fullScreen.isActive && fullScreen.element }
             </div>
 
-            <Routes>
+            /* <Routes>
                 <Route path="/*" element={<Portfolio showOnFullScreen={showOnFullScreen} />} />
                 <Route path="/portfolio/*" element={<Portfolio showOnFullScreen={showOnFullScreen} />} />
                 <Route path="/portfolio/:projectTitle" element={<Project showOnFullScreen={showOnFullScreen}></Project>} />
@@ -62,7 +62,7 @@ function App()
                 <Route path="/references" element={<Reviews />} />
                 <Route path="/contact" element={<Contact />} />
             </Routes>
-        </BrowserRouter>
+        </BrowserRouter> */
     );
 }
 

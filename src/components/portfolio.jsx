@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import Project from "./project";
 import $ from "jquery";
 import { AnimatePresence, motion } from "framer-motion"
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 
 function Portfolio(props)
 {
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const [projectIndex, setProjectIndex] = useState(-1);
     const [overlayHeight, setOverlayHeight] = useState("");
 
@@ -24,7 +24,7 @@ function Portfolio(props)
     }
 
     function showProject(index) {
-        navigate("/portfolio/" + projects[index].title);
+        //navigate("/portfolio/" + projects[index].title);
         setProjectIndex(index);
     }
 
