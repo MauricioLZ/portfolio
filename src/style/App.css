@@ -114,7 +114,9 @@ html, body {
   text-align: left;
   font-size: 1.7em;
   text-decoration: none;
-  color: white;
+  color: white !important;
+  user-select: none;
+  cursor: pointer;
 }
 
 .topics a:hover {

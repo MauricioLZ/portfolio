@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import photo from "../img/photoMauricio.jpg";
 import cursor from "../img/cursorFF7.png";
-//import { Link } from "react-router-dom";
 
 function Sidebar(props)
 {
@@ -45,10 +44,10 @@ function Sidebar(props)
         yearProgression = day1 / totalDaysInYear;
     }
 
-    function changeCursorPositionToIndex(index) {
-        const cursorElement = document.getElementById("Cursor");
-        cursorElement.style.marginTop = (14 + (index * 40)) + "px";
-    }
+    // function changeCursorPositionToIndex(index) {
+    //     const cursorElement = document.getElementById("Cursor");
+    //     cursorElement.style.marginTop = (14 + (index * 40)) + "px";
+    // }
 
     function resetCursorPosition() {
         const cursorElement = document.getElementById("Cursor");
@@ -61,7 +60,6 @@ function Sidebar(props)
     }
 
     const topics = ["Materials", "Status"/*, "References"*/, "Contact"];
-    const links = ["portfolio", "about"/*, "references"*/, "contact"];
 
     return (
         <div className="sidebar">
@@ -78,15 +76,10 @@ function Sidebar(props)
                 <div className="topics">
                     {topics.map((topic, index) => {
                         return <a
-                            key={index}
+                            key={topic + index}
                             onMouseDown={() => onTopicClick(index)}
-                            onMouseEnter={() => changeCursorPositionToIndex(index)}
+                            //onMouseEnter={() => changeCursorPositionToIndex(index)}
                             onMouseLeave={resetCursorPosition}>{topic}</a>
-                        // return <Link to={"/" + links[index]}
-                        //     key={index}
-                        //     onMouseDown={() => onTopicClick(index)}
-                        //     onMouseEnter={() => changeCursorPositionToIndex(index)}
-                        //     onMouseLeave={resetCursorPosition}>{topic}</Link>
                     })}
                 </div>
             </div>

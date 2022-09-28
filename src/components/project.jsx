@@ -1,16 +1,12 @@
-import projects from "../data/projects-data";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft'
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons/faVolumeUp'
 import { motion } from "framer-motion"
-//import { useNavigate } from "react-router-dom"
 
 function Project(props)
 {
-    //const navigate = useNavigate();
-
     function goBack() {
-        //navigate("/portfolio");
+        props.goBack();
     }
 
     function playDescription() {
@@ -21,8 +17,7 @@ function Project(props)
         props.showOnFullScreen(<img src={imgSrc} alt="Fullscreen project screenshot"></img>);
     }
 
-    const url = (window.location.href).replaceAll("%20", " ");
-    const project = projects.filter(function (p) { return url.toLowerCase().includes(p.title.toLowerCase()); })[0];
+    const project = props.project;
 
     return (
         <motion.section className="project"

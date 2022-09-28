@@ -6,12 +6,9 @@ import About from './components/about';
 import Reviews from './components/reviews';
 import Dialogue from './components/dialogue';
 import Contact from './components/contact';
-//import { BrowserRouter, Route, Routes } from 'react-router-dom';
-//import Project from './components/project';
 
 function App() 
 {
-    
     const [page, setPage] = useState(0);
     const [fullScreen, setFullScreen] = useState({ 
         isActive: false, 
@@ -43,26 +40,15 @@ function App()
     else if (url.toLowerCase().includes("contact") && page !== 3) setPage(3);
 
     return (
-        //<BrowserRouter>
-            <div className="App">
-                <Sidebar page={page} onTopicClick={(index) => changePage(index)}></Sidebar>
-                <Dialogue></Dialogue>
-                { page === 0 && <Portfolio showOnFullScreen={showOnFullScreen}></Portfolio> }
-                { page === 1 && <About showOnFullScreen={showOnFullScreen}></About> }
-                { page === 2 && <Reviews></Reviews> }
-                { page === 3 && <Contact></Contact> }
-                { fullScreen.isActive && fullScreen.element }
-            </div>
-
-            /* <Routes>
-                <Route path="/*" element={<Portfolio showOnFullScreen={showOnFullScreen} />} />
-                <Route path="/portfolio/*" element={<Portfolio showOnFullScreen={showOnFullScreen} />} />
-                <Route path="/portfolio/:projectTitle" element={<Project showOnFullScreen={showOnFullScreen}></Project>} />
-                <Route path="/about" element={<About />} />
-                <Route path="/references" element={<Reviews />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
-        </BrowserRouter> */
+        <div className="App">
+            <Sidebar page={page} onTopicClick={(index) => changePage(index)}></Sidebar>
+            <Dialogue></Dialogue>
+            { page === 0 && <Portfolio showOnFullScreen={showOnFullScreen}></Portfolio> }
+            { page === 1 && <About showOnFullScreen={showOnFullScreen}></About> }
+            { /*page === 2 && <Reviews></Reviews>*/ }
+            { page === 2 && <Contact></Contact> }
+            { fullScreen.isActive && fullScreen.element }
+        </div>
     );
 }
 
