@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from '@emailjs/browser';
 import { CircularProgress } from "@mui/material";
 import { motion } from "framer-motion"
+import { useEffect } from "react";
 
 function Contact()
 {
@@ -11,6 +12,10 @@ function Contact()
     const [submitMsg, setSubmitMsg] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [feedbackColorClass, setFeedbackColorClass] = useState("")
+
+    useEffect(() => {
+        emailjs.init(process.env.REACT_APP_EMAIL_PUBLIC_KEY);
+    }, []);
 
     function writeMessage(e) {
         const target = e.target;
@@ -41,7 +46,7 @@ function Contact()
 
         if (message.length > 0) {
             
-            emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, target, process.env.REACT_APP_EMAIL_PUBLIC_KEY)
+            emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID, process.env.REACT_APP_EMAIL_TEMPLATE_ID, target)
                 .then((result) => changeSubmitState(true, "Thank you, your message has been sent!", "colorOk"),
                     (error) => changeSubmitState(true, "An error occurred, please try again.", "colorError"));
         }
