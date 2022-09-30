@@ -46,6 +46,7 @@ function Portfolio(props)
                                     alt={project.title}
                                     loading="eager"
                                     onLoad={() => { if(index === 0) handleResize() }}
+                                    onMouseDown={() => showProject(index)}
                                 />
                             ))}
 

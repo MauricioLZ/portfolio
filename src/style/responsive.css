@@ -1,43 +1,153 @@
 @media only screen and (max-width: 799px) {
+
+    /* SIDEBAR */
+
     .sidebar {
-      width: 200px;
+      position: relative;
       font-size: 0.7rem;
+      margin: 5px 5px;
+      padding: 15px;
+      text-align: start;
     }
-    .topics a {
-      margin-bottom: 12px;
+
+    .profileImg {
+      display: inline-block;
+      width: 30%;
+      margin-top: 0px;
+      vertical-align: top;
     }
-    .cursorContainer {
-      width: 40px;
+
+    .levelExp {
+      display: inline-block;
+      width: 60%;
+      margin-left: 20px;
     }
-    .cursorContainer img {
-      width: 30px;
-    }
+
     .expGauge {
       height: 12px;
+      text-align: center;
     }
-  
-    .portfolio, .project, .reviews, .contact {
-      left: 250px;
-      padding: 40px 20px;
+
+    .topicsGrid {
+      margin-top: 15px;
     }
-    .about, .dialogue {
-      left: 250px;
+
+    .cursorContainer {
+      display: none;
     }
+
+    .topics {
+      display: block;
+      height: auto;
+      text-align: center;
+    }
+
+    .topics a {
+      display: inline-block;
+      margin: 0px 15px;
+      font-size: 1.5rem;
+    }
+    
+    /* DIALOGUE */
+
+    .dialogue {
+      position: initial;
+      margin: 10px 40px 10px 5px;
+      padding: 10px;
+      height: 100px;
+    }
+
+    .dialogue h1 {
+      font-size: 1.0rem;
+    }
+
+    .dialogue p {
+      font-size: 1.0rem;
+    }
+
+    /* PAGES */
+
+    .portfolio, .project, .reviews, .contact, .about {
+      position: initial;
+      margin: 5px;
+      padding: 30px;
+    }
+
     .portfolioOverlays {
-      padding: 40px 20px;
+      display: none;
+    }
+
+    .about div {
+      padding: 0px;
+    }
+
+    .infjImg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .about p {
+      display: block;
+      font-size: 1.0rem;
+      margin: 40px 0px 0px;
+    }
+
+    .lelouchImg {
+      position: initial;
+      display: block;
+      margin: 40px auto 20px;
+      text-align: center;
     }
   
     .portfolioImgGroup img {
       width: 100%;
     }
-  
-    .portfolioImgOverlay {
-      width: 100%;
-      margin-right: 0px;
+
+    .projectMedia {
+      display: block;
+      width: auto;
     }
   
     .projectMedia img {
+      width: 45%;
+      margin: 5px 2%;
+    }
+
+    .projectDescription {
+      display: block;
       width: 100%;
+      margin: 30px 0px 10px;
+    }
+    
+    .fullScreen {
+      padding: 15px;
+      overflow: scroll;
+    }
+  }
+
+  @media only screen and (min-width: 800px) {
+    .sidebar {
+      top: 15px;
+      left: 15px;
+      bottom: 15px;
+    }
+
+    .topicsGrid {
+      display: grid;
+      grid-template-areas: 
+        "cursor topic topic topic";
+    }
+
+    .cursorContainer {
+      grid-area: cursor;
+    }
+
+    .dialogue {
+      width: 500px;
+      top: 30px;
+      left: 300px;
+      height: 130px;
     }
   }
   

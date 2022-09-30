@@ -2,9 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft'
 import { faVolumeUp } from '@fortawesome/free-solid-svg-icons/faVolumeUp'
 import { motion } from "framer-motion"
+import { useEffect } from "react"
 
 function Project(props)
 {
+    useEffect(() => {
+        window.scrollTo(0, 320);
+    }, [])
+
     function goBack() {
         props.goBack();
     }

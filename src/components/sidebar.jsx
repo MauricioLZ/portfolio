@@ -64,10 +64,12 @@ function Sidebar(props)
     return (
         <div className="sidebar">
             <img className="profileImg" src={photo} alt="Profile"/>
-            <h5 className="level">LV <span>{age}</span></h5>
-            <div className="expGauge">
-                <div style={{ width: (yearProgression * 100) + "%"}}></div>
-                <p>{day1} / {totalDaysInYear} to birthday</p>
+            <div className="levelExp">
+                <h5 className="level">LV <span>{age}</span></h5>
+                <div className="expGauge">
+                    <div style={{ width: (yearProgression * 100) + "%"}}></div>
+                    <p>{day1} / {totalDaysInYear} to birthday</p>
+                </div>
             </div>
             <div className="topicsGrid">
                 <div className="cursorContainer">
