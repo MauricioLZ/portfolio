@@ -23,6 +23,10 @@
       margin-left: 20px;
     }
 
+    .level {
+      margin-top: 0px;
+    }
+
     .expGauge {
       height: 12px;
       text-align: center;
@@ -45,7 +49,7 @@
     .topics a {
       display: inline-block;
       margin: 0px 15px;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     
     /* DIALOGUE */
@@ -54,7 +58,7 @@
       position: initial;
       margin: 10px 40px 10px 5px;
       padding: 10px;
-      height: 100px;
+      height: 110px;
     }
 
     .dialogue h1 {
@@ -62,7 +66,7 @@
     }
 
     .dialogue p {
-      font-size: 1.0rem;
+      font-size: 0.9rem;
     }
 
     /* PAGES */
@@ -148,6 +152,13 @@
       top: 30px;
       left: 300px;
       height: 130px;
+    }
+  }
+
+  @media only screen and (max-width: 360px) {
+    .topics a {
+      margin: 0px 10px;
+      font-size: 1.0rem;
     }
   }
   
