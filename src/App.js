@@ -37,8 +37,8 @@ function App()
     const url = window.location.href;
 
     if (url.toLowerCase().includes("about") && page !== 1) setPage(1);
-    else if (url.toLowerCase().includes("references") && page !== 2) setPage(2);
-    else if (url.toLowerCase().includes("contact") && page !== 3) setPage(3);
+    //else if (url.toLowerCase().includes("references") && page !== 2) setPage(2);
+    else if (url.toLowerCase().includes("contact") && page !== 2) setPage(3);
 
     return (
         <div className="App">
