@@ -11,6 +11,7 @@ import Contact from './components/contact';
 function App() 
 {
     const [page, setPage] = useState(0);
+    const [reloadTrigger, setReload] = useState(false);
     const [fullScreen, setFullScreen] = useState({ 
         isActive: false, 
         element: <div></div> 
@@ -18,6 +19,9 @@ function App()
 
     function changePage(index) {
         setPage(index);
+        if (index === 0) {
+            setReload(!reloadTrigger);
+        }
     }
 
     function showOnFullScreen(element) {
@@ -44,7 +48,7 @@ function App()
         <div className="App">
             <Sidebar page={page} onTopicClick={(index) => changePage(index)}></Sidebar>
             <Dialogue></Dialogue>
-            { page === 0 && <Portfolio showOnFullScreen={showOnFullScreen}></Portfolio> }
+            { page === 0 && <Portfolio showOnFullScreen={showOnFullScreen} reloadTrigger={reloadTrigger}></Portfolio> }
             { page === 1 && <About showOnFullScreen={showOnFullScreen}></About> }
             { /*page === 2 && <Reviews></Reviews>*/ }
             { page === 2 && <Contact></Contact> }

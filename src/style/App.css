@@ -263,6 +263,7 @@ html, body {
 
 .backBtn {
   position: absolute;
+  cursor: pointer;
 }
 
 .project h2 {

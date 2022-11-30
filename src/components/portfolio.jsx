@@ -12,8 +12,8 @@ function Portfolio(props)
     useEffect(() =>
     {
         window.addEventListener('resize', handleResize);
-        handleResize();
-    }, []);
+        setProjectIndex(-1);
+    }, [props.reloadTrigger]);
 
     function handleResize()
     {
