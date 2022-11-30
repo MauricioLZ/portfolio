@@ -1,13 +1,16 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect } from "react";
 import dialogueLines from "../data/dialogueLines";
+import { faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 function Dialogue()
 {
     const [dialogue, setDialogue] = useState(dialogueLines[0]);
+    const [isPaused, setIsPaused] = useState(false);
+    const [index, setIndex] = useState(0);
     
     useEffect(() =>
     {
-        let index = 0;
         let part = "";
         let offset = 0;
         let skips = 0;
@@ -16,40 +19,50 @@ function Dialogue()
 
         const flickIntervalId = setInterval(function ()
         {
-            if (offset <= dialogueLines[index].length)
-            {
-                part = dialogueLines[index].substr(0, offset);
-                if (skips === 0)
+            if (!isPaused) {
+                if (index < dialogueLines.length && offset <= dialogueLines[index].length)
                 {
-                    offset++;
-                }
-                setDialogue(part);
-            }
-            else {
-                skips++;
-                if (skips === dialogueEndSkips)
-                {
-                    index++;
-                    skips = 0;
-                    offset = 0;
-
-                    const linesEnded = (index === dialogueLines.length);
-                    if (linesEnded)
+                    part = dialogueLines[index].substring(0, offset);
+                    if (skips === 0)
                     {
-                        //document.querySelector(".dialogue").style.visibility = "hidden";
-                        clearInterval(flickIntervalId);
+                        offset++;
+                    }
+                    setDialogue(part);
+                }
+                else {
+                    skips++;
+                    if (skips === dialogueEndSkips)
+                    {
+                        setIndex(i => i + 1);
+                        skips = 0;
+                        offset = 0;
+    
+                        const linesEnded = (index === dialogueLines.length);
+                        if (linesEnded)
+                        {
+                            setIsPaused(true);
+                            //document.querySelector(".dialogue").style.visibility = "hidden";
+                        }
                     }
                 }
             }
         }, charTime);
 
         return () => clearInterval(flickIntervalId);
-    }, []);
+    }, [index, isPaused]);
+
+    function replay() {
+        setIndex(0);
+        setIsPaused(false);
+    }
 
     return (
         <div className="dialogue">
             <h1>Mauricio</h1>
             <p>{dialogue}</p>
+            <div className="dialogueReplay" onClick={replay}>
+                <FontAwesomeIcon icon={faRotateLeft}/>
+            </div>
         </div>
     );
 }

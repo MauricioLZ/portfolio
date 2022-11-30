@@ -132,6 +132,12 @@ html, body {
   font-size: 1.2rem;
 }
 
+.dialogueReplay {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
 /* PORTFOLIO */
 
 .portfolio {
