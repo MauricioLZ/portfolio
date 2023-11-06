@@ -9,6 +9,12 @@ function Sidebar(props)
 
     useEffect(resetCursorPosition, [page]);
     useEffect(() => {
+        const onPageLoad = () => {
+            if (props.page !== page) {
+                setPage(props.page);
+            }
+        }
+
         if (document.readyState === "complete") {
             onPageLoad();
         } 
@@ -16,15 +22,9 @@ function Sidebar(props)
             window.addEventListener("load", onPageLoad);
             return () => window.removeEventListener("load", onPageLoad);
         }
-    }, []);
+    }, [page, props.page]);
 
     setLevelAndXp();
-
-    function onPageLoad() {
-        if (props.page !== page) {
-            setPage(props.page);
-        }
-    }
 
     function setLevelAndXp() {
         const today = new Date();
@@ -77,11 +77,11 @@ function Sidebar(props)
                 </div>
                 <div className="topics">
                     {topics.map((topic, index) => {
-                        return <a
+                        return <button
                             key={topic + index}
                             onMouseDown={() => onTopicClick(index)}
                             //onMouseEnter={() => changeCursorPositionToIndex(index)}
-                            onMouseLeave={resetCursorPosition}>{topic}</a>
+                            onMouseLeave={resetCursorPosition}>{topic}</button>
                     })}
                 </div>
             </div>
