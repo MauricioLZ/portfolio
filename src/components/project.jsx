@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUpRightFromSquare, faArrowLeft, faVolumeUp, faPuzzlePiece, faPlay, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { motion } from "framer-motion"
 import { useEffect } from "react"
 
@@ -27,7 +25,7 @@ function Project(props)
         <motion.section className="project"
             initial={{ x: 80 }}
             animate={{ x: 0 }}>
-            <FontAwesomeIcon className="backBtn" icon={faArrowLeft} size="2x" onMouseDown={goBack} />
+            <img className="backBtn icon" src="./icons/back.png" alt="icon" onMouseDown={goBack} />
             <h2>{project.title}</h2>
             <div className="projectImgs">
                 {project.media.map((media, index) => (
@@ -43,25 +41,25 @@ function Project(props)
                 <div className="projectMediaContainer">
                     { project.website !== "" && 
                         <div className="projectMedia" onMouseDown={() => window.open(project.website)}>
-                            <FontAwesomeIcon icon={faGlobe} size="2x" />
-                            <p>Website <FontAwesomeIcon icon={faArrowUpRightFromSquare}/></p>
+                            <img className="icon" src="./icons/globe.png" alt="icon"/>
+                            <p>Website <img className="smallIcon" src="./icons/link.png" alt="icon"/></p>
                         </div> 
                     }
                     { project.video !== "" && 
                         <div className="projectMedia" onMouseDown={() => window.open(project.video)}>
-                            <FontAwesomeIcon icon={faPlay} size="2x" />
-                            <p>Video <FontAwesomeIcon icon={faArrowUpRightFromSquare}/></p>
+                            <img className="icon" src="./icons/play.png" alt="icon"/>
+                            <p>Video <img className="smallIcon" src="./icons/link.png" alt="icon"/></p>
                         </div> 
                     }
                     { project.executable !== "" && 
                         <div className="projectMedia" onMouseDown={() => window.open(project.executable)}>
-                            <FontAwesomeIcon icon={faPuzzlePiece} size="2x" />
-                            <p>Executable <FontAwesomeIcon icon={faArrowUpRightFromSquare}/></p>
+                            <img className="icon" src="./icons/puzzle-piece.png" alt="icon"/>
+                            <p>Executable <img className="smallIcon" src="./icons/link.png" alt="icon"/></p>
                         </div> 
                     }
                     { project.audio !== "" && 
                         <div className="projectMedia" onMouseDown={playDescription}>
-                            <FontAwesomeIcon icon={faVolumeUp} size="2x" />
+                            <img className="icon" src="./icons/audio.png" alt="icon"/>
                             <p>Audio Read</p>
                         </div> 
                     }

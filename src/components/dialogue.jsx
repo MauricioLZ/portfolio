@@ -1,7 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState, useEffect } from "react";
 import dialogueLines from "../data/dialogueLines";
-import { faRotateLeft } from "@fortawesome/free-solid-svg-icons";
 
 function Dialogue()
 {
@@ -61,7 +59,7 @@ function Dialogue()
             <h1>Mauricio</h1>
             <p>{dialogue}</p>
             <div className="dialogueReplay" onClick={replay}>
-                <FontAwesomeIcon icon={faRotateLeft}/>
+                <img src="./icons/redo.png" alt="icon"/>
             </div>
         </div>
     );
