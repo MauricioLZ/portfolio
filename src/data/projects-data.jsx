@@ -1,5 +1,18 @@
 const projects = [
     {
+        title: "Genealogica",
+        year: 2023,
+        platforms: ["Website", "PC"],
+        engine: "React JS .Net",
+        coverImg: "https://imgur.com/PA6rZma.png",
+        media: ["https://imgur.com/roIx6eM.png", "https://imgur.com/rtTftip.png", "https://imgur.com/qrS5Cbj.png", "https://imgur.com/4Xanm3M.png"],
+        website: "https://genealogica.azurewebsites.net",
+        video: "",
+        executable: "",
+        audio: "",
+        description: "Genealogica is a project that I developed in order to learn Azure and various aspects of deploying a web app with React as frontend in conjunction with .Net as backend. The current state of the project lacks functionalities, but it helped me a lot in learning how to put all these technologies together."
+    },
+    {
         title: "Portfolio Website",
         year: 2022,
         platforms: ["Website", "PC"],

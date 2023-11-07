@@ -1,6 +1,6 @@
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
-import { CircularProgress } from "@mui/material";
+//import { CircularProgress } from "@mui/material";
 import { motion } from "framer-motion"
 import { useEffect } from "react";
 
@@ -79,7 +79,8 @@ function Contact()
                         }
                         {  isSubmitting && 
                             <button className="submitLoad" name="submitLoad" disabled>
-                                <CircularProgress size="" className="loadSmall"/>
+                                { //<CircularProgress size="" className="loadSmall"/>
+                                }
                             </button> 
                         }
                     </div>
