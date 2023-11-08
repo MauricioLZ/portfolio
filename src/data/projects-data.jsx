@@ -19,7 +19,7 @@ const projects = [
         engine: "React JS",
         coverImg: "https://i.imgur.com/AZ4EzOS.jpg",
         media: ["https://i.imgur.com/5ZA7xd1.png", "https://i.imgur.com/mFOtBVo.png", "https://i.imgur.com/xqYGnrK.png", "https://i.imgur.com/ckFflL2.png"],
-        website: "https://mlz-portfolio.herokuapp.com",
+        website: "https://mlzportfolio.azurewebsites.net",
         video: "",
         executable: "",
         audio: "",
