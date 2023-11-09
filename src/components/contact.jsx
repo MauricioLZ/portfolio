@@ -14,6 +14,7 @@ function Contact()
     const [feedbackColorClass, setFeedbackColorClass] = useState("")
 
     useEffect(() => {
+        console.log(process.env.REACT_APP_EMAIL_PUBLIC_KEY);
         emailjs.init(process.env.REACT_APP_EMAIL_PUBLIC_KEY);
     }, []);
 
